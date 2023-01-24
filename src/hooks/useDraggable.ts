@@ -1,0 +1,85 @@
+import { 
+  useEffect,
+  useCallback,
+  useRef,
+  useState,
+  MutableRefObject,
+} from 'react';
+import { Position } from '../components/Window/window.model';
+
+// Below function broke dragging
+// const throttle = (f: Function) => {
+//   let token: any = null,
+//     lastArgs: any = null;
+//   const invoke = () => {
+//     f(...lastArgs);
+//     token = null;
+//   };
+//   const result = (...args: any[]) => {
+//     lastArgs = args;
+//     if (!token) {
+//       token = requestAnimationFrame(invoke);
+//     }
+//   };
+//   result.cancel = () => token && cancelAnimationFrame(token);
+//   return result;
+// };
+
+const id = ({ x, y }: Position) => ({ x, y });
+export const useDraggable = ({ onDrag = id } = {}) => {
+  const [pressed, setPressed] = useState(false);
+  const position = useRef({ x: 0, y: 0 });
+  const ref: MutableRefObject<HTMLElement | undefined> = useRef();
+  const unsubscribe: any = useRef();
+
+  const legacyRef = useCallback((elem: HTMLElement) => {
+    ref.current = elem;
+    if (unsubscribe.current) {
+      unsubscribe.current();
+    }
+    if (!elem) {
+      return;
+    }
+    const handleMouseDown = (e: any) => {
+        // only drag if pressing title bar of window
+      if (e !== null && e.target && e.target.className === 'title-bar') {
+        setPressed(true);
+      }
+    };
+    elem.addEventListener("mousedown", handleMouseDown);
+    unsubscribe.current = () => {
+      elem.removeEventListener("mousedown", handleMouseDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!pressed) {
+      return;
+    }
+    const handleMouseMove = (event: any) => {
+      if (!ref.current || !position.current) {
+        return;
+      }
+      
+      const pos = position.current;
+      const elem = ref.current;
+      position.current = onDrag({
+        x: pos.x + event.movementX,
+        y: pos.y + event.movementY
+      });
+      elem.style.transform = `translate(${pos.x}px, ${pos.y}px)`;
+    };
+    const handleMouseUp = (e: any) => {
+      setPressed(false);
+    };
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+    return () => {
+      //handleMouseMove.cancel();
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [pressed, onDrag]);
+
+  return [legacyRef, pressed];
+};

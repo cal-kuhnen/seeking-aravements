@@ -42,7 +42,7 @@ export const useDraggable = ({ onDrag = id } = {}) => {
     }
     const handleMouseDown = (e: any) => {
         // only drag if pressing title bar of window
-      if (e !== null && e.target && e.target.className === 'title-bar') {
+      if (e !== null && e.target && (e.target.className === 'title-bar' || e.target.className === 'title')) {
         setPressed(true);
       }
     };

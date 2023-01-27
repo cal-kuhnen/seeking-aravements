@@ -2,7 +2,7 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: yellow;
+  background: #FFF;
 }
 
 body {
@@ -14,6 +14,7 @@ body {
   background-size: 100% 100%;
   float: left;
   width: 100%;
+  overflow: hidden;
 }
 
 .desktop {

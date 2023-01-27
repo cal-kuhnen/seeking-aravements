@@ -5,8 +5,8 @@ import './desktop.css';
 const Desktop = () => {
   return (
     <div className="desktop">
-      <Window/>
-      <Window/>
+      <Window title='Find Ya Rave Partna' height={200} width={200}/>
+      <Window title='Minesweeper' height={300} width={150}/>
       <Taskbar/>
     </div>
   )

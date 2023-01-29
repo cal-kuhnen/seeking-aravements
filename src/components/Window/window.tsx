@@ -17,15 +17,20 @@ const Window = (props: WindowInfo) => {
     onDrag: handleDrag
   });
 
-  const size = {
+  const initialSize = {
     height: props.height,
     width: props.width,
+    transform: `translate(calc((100vw - ${props.width}px)/2), ${props.y}px)`,
   }
 
+  const content = props.content();
+
   return (
-    <div className='window' style={size} ref={ref as any}>
+    <div className='window' style={initialSize} ref={ref as any}>
       <Titlebar title={props.title}/>
-      <div className='window-content'></div>
+      <div className='window-content'>
+        {content}
+      </div>
     </div>
   );
 };

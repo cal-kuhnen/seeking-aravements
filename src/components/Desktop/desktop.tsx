@@ -1,12 +1,12 @@
 import Taskbar from '../Taskbar/taskbar';
+import Raveform from '../Window/components/Raveform/raveform';
 import Window from '../Window/window';
 import './desktop.css';
 
 const Desktop = () => {
   return (
     <div className="desktop">
-      <Window title='Find Ya Rave Partna' height={200} width={200}/>
-      <Window title='Minesweeper' height={300} width={150}/>
+      <Window title='Seeking Aravements' height={800} width={1000} x={300} y={30} content={Raveform}/>
       <Taskbar/>
     </div>
   )

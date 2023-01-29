@@ -1,0 +1,26 @@
+.rave-form {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-image: url(../../../../assets/form/geocities2.jpg);
+}
+
+.rave-margin {
+  width: 10%;
+  background-image: url(../../../../assets/form/spinning-heart.gif);
+  background-size: 100% auto;
+}
+
+.rave-content {
+  width: 75%;
+}
+
+.form-title {
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 2px 2px #000;
+  color: #fff;
+}

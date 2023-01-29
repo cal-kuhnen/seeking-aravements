@@ -6,6 +6,8 @@
   border-radius: 5px 5px 0px 0px;
   overflow-x: hidden;
   resize: both;
+  min-height: 50px;
+  min-width: 20px;
 }
 
 .window-content {
@@ -13,4 +15,5 @@
   border-left: 3px solid rgb(8, 49, 217);
   border-right: 3px solid rgb(8, 49, 217);
   border-bottom: 3px solid rgb(8, 49, 217);
+  color: #000;
 }

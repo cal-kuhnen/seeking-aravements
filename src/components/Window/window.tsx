@@ -13,9 +13,12 @@ const Window = (props: WindowInfo) => {
     []
   );
 
+  const startX = ((window.innerWidth - props.width)/2);
+
   const [ref, pressed] = useDraggable({
     onDrag: handleDrag
-  });
+    },
+    { x: startX, y: props.y });
 
   const initialSize = {
     height: props.height,

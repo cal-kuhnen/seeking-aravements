@@ -8,9 +8,9 @@ import {
 import { Position } from '../components/Window/window.model';
 
 const id = ({ x, y }: Position) => ({ x, y });
-export const useDraggable = ({ onDrag = id } = {}) => {
+export const useDraggable = ({ onDrag = id } = {}, startPos: Position) => {
   const [pressed, setPressed] = useState(false);
-  const position = useRef({ x: 0, y: 0 });
+  const position = useRef({ x: startPos.x, y: startPos.y });
   const ref: MutableRefObject<HTMLElement | undefined> = useRef();
   const unsubscribe: any = useRef();
 

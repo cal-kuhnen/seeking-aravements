@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/index.ts"
+    "start": "node server/index.ts",
+    "build": "cd client && npm i && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +17,8 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.18"
+  },
+  "engines": {
+    "node": "16.11.1"
   }
 }

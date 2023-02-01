@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { form } from '../../../../../../assets/text/strings';
+import { submitMatchData } from '../../../../../../services/sheets.service';
 import './questions.css';
 
 const Questions = () => {
@@ -9,8 +10,8 @@ const Questions = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = () => {
+    submitMatchData();
   };
 
   return (
@@ -21,7 +22,7 @@ const Questions = () => {
           <input
             type="text"
             className='single-line-text'
-            {...register("name", {
+            {...register("1", {
               required: true,
             })}
           />
@@ -34,7 +35,7 @@ const Questions = () => {
           <input
             type="text"
             className='single-line-text'
-            {...register("email", {
+            {...register("2", {
               required: true,
               pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/
             })}

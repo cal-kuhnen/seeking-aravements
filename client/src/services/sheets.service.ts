@@ -9,7 +9,7 @@ declare global {
 
 export const submitMatchData = async () => {
   try {
-    const response = await fetch("http://localhost:3001/api");
+    const response = await fetch("/api");
     const data = await response.json();
     console.log(data);
   } catch (err) {

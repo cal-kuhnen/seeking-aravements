@@ -1,4 +1,4 @@
-import { SHEET_ID } from '../constants/sheet';
+import { SHEET_ID } from '../../../server/constants/sheet';
 
 declare global {
   interface Window {

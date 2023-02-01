@@ -1,14 +1,9 @@
-import { SHEET_ID } from '../../../../constants/sheet';
 import Questions from './components/Questions/questions';
 import { form } from '../../../../assets/text/strings';
 // import handler from '../../../../services/sheets.service';
 import './raveform.css';
 
 const Raveform = () => {
-
-  // const handleSubmit = () => {
-  //   handler(SHEET_ID);
-  // }
   return (
     <div className="rave-form">
       <div className='rave-margin'></div>

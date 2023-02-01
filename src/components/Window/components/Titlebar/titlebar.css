@@ -24,12 +24,24 @@
   user-select: none;
 }
 
-.title {
+.header {
   margin-left: 10px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: bold;
   font-size: 1em;
   word-wrap: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.title {
+  margin-left: 5px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
 }
 
 .window-buttons {

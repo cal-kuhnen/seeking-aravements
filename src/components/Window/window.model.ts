@@ -7,9 +7,15 @@ export interface Position {
 
 export interface WindowInfo {
   title: string;
+  icon: string;
   height: number;
   width: number;
-  x: number,
-  y: number,
-  content: () => ReactElement,
+  x: number;
+  y: number;
+  content: () => ReactElement;
+}
+
+export interface TitleBar {
+  title: string;
+  icon: string;
 }

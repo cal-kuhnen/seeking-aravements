@@ -1,0 +1,22 @@
+.questions {
+  font-family: "Conthrax", Helvetica, sans-serif;
+  font-size: 1em;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 5px 3px 3px rgb(165, 125, 130);
+}
+
+.errorMsg {
+  color: #dd0000;
+}
+
+label {
+  display: block;
+}
+
+input.single-line-text {
+  width: 50%;
+  margin-bottom: 20px;
+}

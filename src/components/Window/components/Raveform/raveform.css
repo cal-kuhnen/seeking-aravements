@@ -2,11 +2,11 @@
   height: 100%;
   display: flex;
   justify-content: space-evenly;
-  background-image: url(../../../../assets/form/geocities2.jpg);
+  background-image: url(../../../../assets/form/rainbow.jpg);
 }
 
 .rave-margin {
-  width: 10%;
+  width: 150px;
   background-image: url(../../../../assets/form/spinning-heart.gif);
   background-size: 100% auto;
 }
@@ -17,10 +17,28 @@
 
 .form-title {
   text-align: center;
-  margin-top: 20px;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 2em;
+  font-family: 'Husky', sans-serif;
+  font-size: 3.5em;
   font-weight: bold;
+  margin-top: 20px;
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,160,233,1) 100%);
+  box-shadow: 5px 3px 3px rgb(128, 97, 168);
+  border-radius: 20px 20px 20px 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.form-description {
+  font-family: 'Conthrax', sans-serif;
+  font-size: 1.2em;
+  background: radial-gradient(circle, rgba(238,125,210,1) 0%, rgba(206,164,213,1) 70%, rgba(148,233,218,1) 100%);
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: 5px 3px 3px rgb(70, 115, 141);
+}
+
+.shadow {
   text-shadow: 2px 2px #000;
   color: #fff;
 }

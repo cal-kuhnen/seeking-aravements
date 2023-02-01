@@ -1,9 +1,13 @@
+import { TitleBar } from '../../window.model';
 import './titlebar.css';
 
-const Titlebar = (props: { title: string }) => {
+const Titlebar = (props: TitleBar) => {
   return (
     <div className='title-bar'>
-      <div className='title'>{props.title}</div>
+      <div className='header'>
+        <img className='icon' src={props.icon}></img>
+        <div className='title'>{props.title}</div>
+      </div>
       <div className='window-buttons'>
         <div className='window-button blue-button'>
           <div className='minimize-icon'></div>

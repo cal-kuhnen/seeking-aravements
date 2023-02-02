@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require("express");
+const bodyParser = require('body-parser')
 
 const PORT = process.env.PORT || 3001;
 
@@ -13,9 +14,16 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use(bodyParser.json());
+
 app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
+
+app.post("/api/submit", (req, res) => {
+  res.send(req.body);
+  console.log(req.body);
+})
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));

@@ -10,8 +10,8 @@ import './desktop.css';
 const Desktop = () => {
   return (
     <div className="desktop">
-      <Window title='Seeking Aravements' icon={imageIcon} height={800} width={1000} x={100} y={30} content={Raveform}/>
-      <Window title='rave_poster.jpg' icon={notepad} height={672} width={540} x={1200} y={70} content={() => <img className='poster' src={poster}></img>}/>
+      <Window title='Seeking Aravements' icon={notepad} height={800} width={1000} x={100} y={30} content={Raveform}/>
+      <Window title='rave_poster.jpg' icon={imageIcon} height={672} width={540} x={1200} y={70} content={() => <img className='poster' src={poster}></img>}/>
       <Taskbar/>
     </div>
   )

@@ -4,7 +4,15 @@ export const form = {
   questions: {
     name: 'Enter your first name:',
     age: 'Enter your age: **You must be at least 18 years old to continue**',
-    height: 'Enter your height (optional):',
+    height: 'Enter your height:',
     email: 'Enter your e-mail address:',
+    attendance: {
+      id: 'attendance',
+      label: 'Are you attending Seeking aRAVEments - A Valentine\'s Day Rave on February 10th?',
+      values: [
+        'Yes',
+        'No'
+      ]
+    }
   }
 }

@@ -1,8 +1,9 @@
 .questions {
   font-family: "Conthrax", Helvetica, sans-serif;
   font-size: 1em;
-  margin-top: 20px;
   background-color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
   border-radius: 20px;
   padding: 20px;
   box-shadow: 5px 3px 3px rgb(165, 125, 130);
@@ -10,13 +11,19 @@
 
 .errorMsg {
   color: #dd0000;
+  margin: 0px;
+  font-size: 0.8em;
 }
 
 label {
   display: block;
 }
 
+.form-control {
+  margin-top: 20px;
+}
+
 input.single-line-text {
   width: 50%;
-  margin-top: 20px;
+  margin-top: 5px;
 }

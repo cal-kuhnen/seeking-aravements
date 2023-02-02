@@ -1,17 +1,17 @@
-import { SHEET_ID } from '../../../server/constants/sheet';
-
-declare global {
-  interface Window {
-    gapi?: any;
-    showEvents?: any;
-  }
-}
-
-export const submitMatchData = async () => {
+export const postMatchData = async (data: any) => {
   try {
-    const response = await fetch("/api");
-    const data = await response.json();
-    console.log(data);
+    const response = await fetch("/api/submit", {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(data)
+    });
+    return await response.json();
   } catch (err) {
     console.error(err);
   }

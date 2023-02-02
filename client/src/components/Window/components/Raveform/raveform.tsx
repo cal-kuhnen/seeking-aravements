@@ -1,5 +1,5 @@
 import Questions from './components/Questions/questions';
-import { form } from '../../../../assets/text/strings';
+import { form } from '../../../../assets/text/form';
 // import handler from '../../../../services/sheets.service';
 import './raveform.css';
 

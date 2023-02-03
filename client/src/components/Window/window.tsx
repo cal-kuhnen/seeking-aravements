@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useDraggable } from '../../hooks/useDraggable';
-import { Position, WindowInfo } from './window.model';
+import { Position, WindowInfo } from '../../models/window.model';
 import Titlebar from './components/Titlebar/titlebar';
 import './window.css';
 

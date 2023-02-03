@@ -17,6 +17,7 @@
 
 label {
   display: block;
+  margin-bottom: 5px;
 }
 
 .form-control {
@@ -26,4 +27,9 @@ label {
 input.single-line-text {
   width: 50%;
   margin-top: 5px;
+}
+
+textarea {
+  width: 95%;
+  max-width: 95%;
 }

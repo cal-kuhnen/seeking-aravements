@@ -5,7 +5,7 @@ import {
   useState,
   MutableRefObject,
 } from 'react';
-import { Position } from '../components/Window/window.model';
+import { Position } from '../models/window.model';
 
 const id = ({ x, y }: Position) => ({ x, y });
 export const useDraggable = ({ onDrag = id } = {}, startPos: Position) => {

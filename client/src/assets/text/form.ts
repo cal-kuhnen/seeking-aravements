@@ -1,12 +1,30 @@
 export const form = {
   title: 'Meet Your Rave Match',
   description: 'Welcome to the Seeking aRAVEments Rave Date Match Machine. Our cutting edge algorithm utilizes the latest in beatmatching and loveology to pair you with the perfect companion on your rave journey - no matter what you\'re looking for. To find your rave date, fill out the questions below and click "Submit".',
-  questions: {
-    name: 'Enter your first name:',
-    age: 'Enter your age: **You must be at least 18 years old to continue**',
-    height: 'Enter your height:',
-    email: 'Enter your e-mail address:',
-    attendance: {
+  questions: [
+    {
+      id: 'name',
+      type: 'text',
+      label: 'Enter your first name:',
+    },
+    {
+      id: 'age',
+      type: 'text-age',
+      label: 'Enter your age: **You must be at least 18 years old to continue**',
+      error: 'Get outta here!'
+    },
+    {
+      id: 'height',
+      type: 'text-height',
+      label: 'Enter your height:',
+      error: 'Invalid height - follow this pattern: 6\'1\"'
+    },
+    {
+      id: 'email',
+      type: 'text-email',
+      label: 'Enter your e-mail address:',
+    },
+    {
       id: 'attendance',
       type: 'radio',
       label: 'Are you attending Seeking aRAVEments - A Valentine\'s Day Rave on February 10th?',
@@ -15,9 +33,9 @@ export const form = {
         'No'
       ]
     },
-    genderIdentity: {
+    {
       id: 'genderIdentity',
-      type: 'radio-text',
+      type: 'radio',
       label: 'Select the option that most closely matches your gender identity:',
       values: [
         'Male',
@@ -26,9 +44,9 @@ export const form = {
         'Other (please describe):'
       ]
     },
-    romance: {
+    {
       id: 'romance',
-      type: 'radio-text',
+      type: 'radio',
       label: 'What are you looking to get out of this?',
       values: [
         'Something strictly sexual',
@@ -37,7 +55,7 @@ export const form = {
 	      'Other (please describe):'
       ]
     },
-    agePref: {
+    {
       id: 'agePref',
       type: 'radio',
       label: 'What age range would your ideal partner fall under? Select all that apply:',
@@ -48,7 +66,7 @@ export const form = {
 	      '30+'
       ]
     },
-    monogamy: {
+    {
       id: 'monogamy',
       type: 'radio',
       label: 'Are you more interested in monogamy or polyamory?',
@@ -58,7 +76,7 @@ export const form = {
 	      'I\'m open to both',
       ]
     },
-    intimacy: {
+    {
       id: 'intimacy',
       type: 'radio',
       label: 'How important is physical intimacy to you in a relationship?',
@@ -68,7 +86,7 @@ export const form = {
 	      'Not important',
       ]
     },
-    kinky: {
+    {
       id: 'kinky',
       type: 'radio',
       label: 'Would you describe yourself as kinky or willing to try new sexual experiences?',
@@ -80,9 +98,9 @@ export const form = {
 	      'If it\'s not missionary I\'m not into it'
       ]
     },
-    substances: {
+    {
       id: 'substances',
-      type: 'radio-text',
+      type: 'radio',
       label: 'Place a check next to each substance you are comfortable with your potential match using.',
       values: [
         'Nicotine',
@@ -93,7 +111,7 @@ export const form = {
 	      'Cocaine'
       ]
     },
-    beliefs: {
+    {
       id: 'beliefs',
       type: 'radio',
       label: 'How important is it to you that your partner has similar religious beliefs to you?',
@@ -103,7 +121,12 @@ export const form = {
 	      'Little to no importance',
       ]
     },
-    heightPref: {
+    {
+      id: 'spirit',
+      type: 'text-area',
+      label: 'Are you religious or spiritual? If so, what role does it play in your life? (ie: do you go to church, how often, etc)',
+    },
+    {
       id: 'heightPref',
       type: 'radio',
       label: 'How important is it to you that your partner is taller than you?',
@@ -113,7 +136,7 @@ export const form = {
 	      'Little to no importance',
       ]
     },
-    music: {
+    {
       id: 'music',
       type: 'radio',
       label: 'How important is music to you?',
@@ -123,7 +146,52 @@ export const form = {
 	      'Little to no importance',
       ]
     },
-    style: {
+    {
+      id: 'spirit',
+      type: 'text-area',
+      label: 'Are you religious or spiritual? If so, what role does it play in your life? (ie: do you go to church, how often, etc)',
+    },
+    {
+      id: 'favorite-music',
+      type: 'text-area',
+      label: 'What are five of your favorite albums and/or five of your favorite musicians?',
+    },
+    {
+      id: 'time-travel',
+      type: 'text-area',
+      label: 'If you could go back in time to attend any concert or music festival, which would you choose?',
+    },
+    {
+      id: 'favorite-movies',
+      type: 'text-area',
+      label: 'What are five of your favorite tv shows and/or five of your favorite movies?',
+    },
+    {
+      id: 'inspiration',
+      type: 'text-area',
+      label: 'Who are you inspired by? (ie: artists of any kind, political figures, your mom, etc)',
+    },
+    {
+      id: 'posessions',
+      type: 'text-area',
+      label: 'What are a few of your most prized possessions?',
+    },
+    {
+      id: 'cartoon',
+      type: 'text-area',
+      label: 'Who is a cartoon character you feel best describes you?',
+    },
+    {
+      id: 'free-time',
+      type: 'text-area',
+      label: 'What do you typically do in your free time?',
+    },
+    {
+      id: 'time',
+      type: 'text-area',
+      label: 'How is most of your other time spent? (ie: are you in school, do you work full-time, etc)',
+    },
+    {
       id: 'style',
       type: 'radio',
       label: 'Select the option that describes how you dress',
@@ -134,7 +202,7 @@ export const form = {
 	      'My mom still dresses me',
       ]
     },
-    community: {
+    {
       id: 'community',
       type: 'radio',
       label: 'Would you describe yourself as someone who is more individualistic or community-focused?',
@@ -144,10 +212,10 @@ export const form = {
 	      'Not sure',
       ]
     },
-    pet: {
+    {
       id: 'pet',
       type: 'radio',
-      label: 'Would you describe yourself as someone who is more individualistic or community-focused?',
+      label: 'Are you a cat person or a dog person?',
       values: [
         'Cats',
         'Dogs',
@@ -155,7 +223,7 @@ export const form = {
         'Neither' 
       ]
     },
-    battery: {
+    {
       id: 'battery',
       type: 'radio',
       label: 'How would you describe your social battery?',
@@ -165,17 +233,37 @@ export const form = {
 	      'I like to spend most of my time by myself',
       ]
     },
-    career: {
+    {
       id: 'career',
       type: 'radio',
-      label: 'How would you describe your social battery?',
+      label: 'Which of these would you say you are most focused on at this point in your life?',
       values: [
         'My career & professional life',
         'Hanging out and having fun',
 	      'Figuring out who I am & what my purpose is',
       ]
     },
-    hova: {
+    {
+      id: 'feature',
+      type: 'text-area',
+      label: 'What would you say is your best feature (physical or personal)?',
+    },
+    {
+      id: 'traits',
+      type: 'text-area',
+      label: 'Please list the most important traits/qualities you look for in a romantic partner.',
+    },
+    {
+      id: 'first-date',
+      type: 'text-area',
+      label: 'Where would you take your match on a first date?',
+    },
+    {
+      id: 'flags',
+      type: 'text-area',
+      label: 'Do you have any deal-breakers/turn-offs/red flags when it comes to romantic partners?',
+    },
+    {
       id: 'hova',
       type: 'radio',
       label: 'Would you rather have dinner with Jay-Z or $500,000?',
@@ -184,7 +272,7 @@ export const form = {
         '$500,000',
       ]
     },
-    emo: {
+    {
       id: 'emo',
       type: 'radio',
       label: 'Do you think that it\'s really possible for an emo girl and a country boy to fall in love?',
@@ -194,7 +282,7 @@ export const form = {
         'I\'d like to think so, but ultimately given the socio-economic & geo-political state of the world it seems unrealistic'
       ]
     },
-    nuclear: {
+    {
       id: 'nuclear',
       type: 'radio',
       label: 'If this country were to suffer an unprovoked nuclear attack and would be totally obliterated in a matter of minutes, would you favor unleashing the U.S. nuclear arsenal upon the attackers?',
@@ -203,6 +291,16 @@ export const form = {
         'No',
         'Not sure'
       ]
+    },
+    {
+      id: 'share',
+      type: 'text-area',
+      label: 'Is there anything else you would like to share about yourself? The more you provide, the better chances you have of finding a perfect match.',
+    },
+    {
+      id: 'contact',
+      type: 'text-area',
+      label: 'How would you like to be contacted by your match? Please provide a method(s) of contact you feel comfortable with (email, phone number, instagram, twitter, etc).',
     }
-  }
+  ]
 }

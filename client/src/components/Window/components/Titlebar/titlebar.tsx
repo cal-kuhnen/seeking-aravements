@@ -1,4 +1,4 @@
-import { TitleBar } from '../../window.model';
+import { TitleBar } from '../../../../models/window.model';
 import './titlebar.css';
 
 const Titlebar = (props: TitleBar) => {

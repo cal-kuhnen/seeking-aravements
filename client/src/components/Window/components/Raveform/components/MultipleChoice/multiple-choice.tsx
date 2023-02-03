@@ -1,4 +1,4 @@
-import { MultipleChoiceModel } from "./multiple-choice.model";
+import { MultipleChoiceModel } from "../../../../../../models/question.model";
 import { common } from "../../../../../../assets/text/strings";
 import './multiple-choice.css';
 import { useState } from "react";
@@ -14,7 +14,7 @@ const MultipleChoice = (question: MultipleChoiceModel) => {
     element?.click();
   }
 
-  const Values = question.info.values.map(value => {
+  const Values = question.info.values?.map(value => {
     if (value === common.other) {
       return (
         <label id="moronic" key={question.info.id} className='multiple-choice'>

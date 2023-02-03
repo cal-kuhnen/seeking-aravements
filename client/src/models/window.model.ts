@@ -13,6 +13,7 @@ export interface WindowInfo {
   width: string;
   x: number;
   y: number;
+  z?: number;
   content: () => ReactElement;
 }
 

@@ -24,3 +24,11 @@
   max-height: calc(100% - 3px);
   max-width: 100%;
 }
+
+.message {
+  margin: 10px 10px 10px 10px;
+}
+
+#success > .window-content {
+  background: #eee;
+}

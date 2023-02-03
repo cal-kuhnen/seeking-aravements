@@ -11,7 +11,7 @@ import './desktop.css';
 const Desktop = () => {
   const [mobile, setMobile] = useState(window.innerWidth <= 500);
   return (
-    <div className="desktop">
+    <div id="desktop" className="desktop">
       <Window 
         id='form' 
         title='Seeking Aravements' 

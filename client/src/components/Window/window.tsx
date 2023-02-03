@@ -22,12 +22,15 @@ const Window = (props: WindowInfo) => {
     height: props.height,
     width: props.width,
     transform: `translate(${props.x}vw, ${props.y}vh)`,
+    zIndex: props.z || 1,
   }
 
   const handleClick = (e: any) => {
     const elements = document.getElementsByClassName('window') as HTMLCollectionOf<HTMLElement>;
     for(let i = 0; i < elements.length; i++) {
-      elements[i].style.zIndex = '1';
+      if (elements[i].id !== 'success' && elements[i].id !== 'error') {
+        elements[i].style.zIndex = '1';
+      }
       e.currentTarget.style.zIndex = '2';
     }
   }

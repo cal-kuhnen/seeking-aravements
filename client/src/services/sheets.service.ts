@@ -11,7 +11,7 @@ export const postMatchData = async (data: any) => {
       referrerPolicy: 'no-referrer',
       body: JSON.stringify(data)
     });
-    return await response.json();
+    return await response;
   } catch (err) {
     console.error(err);
   }

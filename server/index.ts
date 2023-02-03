@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import * as handler from "./spreadsheet";
 const path = require('path');
 const express = require("express");
+const forceSSL = require('express-force-ssl');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3001;
 
@@ -21,10 +22,9 @@ app.get("/api", (req: Request, res: Response) => {
   res.json({ message: "Hello from server!" });
 });
 
-app.post("/api/submit", (req: Request, res: Response) => {
-  res.send(req.body);
-  handler.sheetHandler(req.body);
-  console.log(req.body);
+app.post("/api/submit", async (req: Request, res: Response) => {
+  // res.send(req.body);
+  await handler.sheetHandler(req.body, res);
 })
 
 app.get('*', (req: Request, res: Response) => {

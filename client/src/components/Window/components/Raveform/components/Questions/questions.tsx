@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 import { useForm } from 'react-hook-form';
 import { form } from '../../../../../../assets/text/form';
 import { Question } from '../../../../../../models/question.model';
 import { postMatchData } from '../../../../../../services/sheets.service';
 import MultipleChoice from '../MultipleChoice/multiple-choice';
+import Window from '../../../../window';
+import favicon from '../../../../../../assets/form/favicon.png'
 import './questions.css';
 
 const Questions = () => {
@@ -11,14 +14,26 @@ const Questions = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({mode: "onChange"});
   const [formData, setFormData] = useState({} as any);
+  const [successMessage, setSuccessMessage] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(false);
 
-  const onSubmit = (data: any) => {
+  const onSubmit = async (data: any) => {
     setFormData(JSON.stringify(data));
     let cleanedData = {...data, substances: data.substances.toString()};
-    postMatchData(cleanedData);
+    const res = await postMatchData(cleanedData);
+    if (res && res.status === 200) {
+      setSuccessMessage(true);
+    } else if (res && res.status === 500) {
+      setErrorMessage(true);
+    }
   };
+
+  useEffect(() => {
+    reset();
+  }, [successMessage])
 
   const generatedQuestions: any = form.questions.map(question => {
     switch (question.type) {
@@ -135,6 +150,46 @@ const Questions = () => {
           </div>
         </div>
       </form>
+      { successMessage && (ReactDOM.createPortal(
+              <Window 
+                id="success"
+                title="Success!"
+                icon={favicon}
+                height="15vh"
+                width="15vw"
+                x={45}
+                y={45}
+                z={3}
+                content={() => 
+                  <div className='message'>
+                    <div>Your answers have been recorded.</div>
+                    <div className='center'>
+                      <button className='submit-button modal-button' onClick={() => setSuccessMessage(false)}>Ok</button>
+                    </div>
+                  </div>
+                }
+              />,
+              document.getElementById('desktop')!
+      ))}
+      { errorMessage && (ReactDOM.createPortal(
+              <Window 
+                id="error"
+                title="Error"
+                icon={favicon}
+                height="15vh"
+                width="15vw"
+                x={45}
+                y={45}
+                z={3}
+                content={() => 
+                  <div className='message'>
+                    <div>There was an error processing your request.</div>
+                    <button className='submit-button modal-button' onClick={() => setErrorMessage(false)}>Ok</button>
+                  </div>
+                }
+              />,
+              document.getElementById('desktop')!
+      ))}
     </div>
   )
 }

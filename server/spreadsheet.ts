@@ -4,7 +4,7 @@ const { SHEETS_KEY, EMAIL, SHEET_ID } = require('./constants/sheet');
 
 const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID || SHEET_ID);
 
-export const sheetHandler = async (body: any) => {
+export const sheetHandler = async (body: any, res: Response) => {
 
   try {
 
@@ -15,10 +15,11 @@ export const sheetHandler = async (body: any) => {
 
     await doc.loadInfo(); // loads document properties and worksheets
     console.log(doc.title);
-    const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
+    const sheet = doc.sheetsByIndex[0];
     await sheet.addRow(body);
 
+    res.sendStatus(200);
   } catch (error) {
-    console.error(error);
+    res.sendStatus(500);
   }
 }

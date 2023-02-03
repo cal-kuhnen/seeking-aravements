@@ -57,3 +57,7 @@ button.submit-button:active {
   box-shadow: none;
   background: linear-gradient(180deg,#cdcac3,#e3e3db 8%,#e5e5de 94%,#f2f2f1);
 }
+
+.modal-button {
+  margin-top: 15px;
+}

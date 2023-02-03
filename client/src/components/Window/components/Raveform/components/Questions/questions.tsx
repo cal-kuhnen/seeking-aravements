@@ -130,7 +130,9 @@ const Questions = () => {
         {generatedQuestions}
         <div key="boom" className="form-control">
           <label></label>
-          <button type="submit">Submit</button>
+          <div className='center'>
+            <button className="submit-button" type="submit">Submit</button>
+          </div>
         </div>
       </form>
     </div>

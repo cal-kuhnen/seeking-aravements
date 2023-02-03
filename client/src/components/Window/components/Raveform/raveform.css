@@ -41,3 +41,13 @@
   text-shadow: 2px 2px #000;
   color: #fff;
 }
+
+@media only screen and (max-width: 500px) {
+  .form-title {
+    padding: 30px;
+  }
+  
+  .rave-margin {
+    width: 50px;
+  }
+}

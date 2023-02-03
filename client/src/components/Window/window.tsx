@@ -35,7 +35,7 @@ const Window = (props: WindowInfo) => {
   const content = props.content();
 
   return (
-    <div key={props.title} className='window' style={initialSize} ref={ref as any} onMouseDown={handleClick}>
+    <div key={props.title} id={props.id} className='window' style={initialSize} ref={ref as any} onMouseDown={handleClick}>
       <Titlebar title={props.title} icon={props.icon}/>
       <div className='window-content'>
         {content}

@@ -6,6 +6,7 @@ export interface Position {
 }
 
 export interface WindowInfo {
+  id?: string;
   title: string;
   icon: string;
   height: string;

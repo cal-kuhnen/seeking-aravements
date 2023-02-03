@@ -1,4 +1,4 @@
-import { url } from 'inspector';
+import { useState } from 'react';
 import Taskbar from '../Taskbar/taskbar';
 import Raveform from '../Window/components/Raveform/raveform';
 import Window from '../Window/window';
@@ -9,10 +9,19 @@ import imageIcon from '../../assets/xp/image-icon.png';
 import './desktop.css';
 
 const Desktop = () => {
+  const [mobile, setMobile] = useState(window.innerWidth <= 500);
   return (
     <div className="desktop">
-      <Window title='Seeking Aravements' icon={notepad} height='90vh' width='53vw' x={1} y={3} content={Raveform}/>
       <Window 
+        id='form' 
+        title='Seeking Aravements' 
+        icon={notepad} 
+        height={ mobile ? 'calc(100vh - 30px)' : '90vh'} 
+        width={ mobile ? '100vw' : '53vw'} 
+        x={mobile ? 0 : 1} 
+        y={mobile ? 0 : 3} 
+        content={Raveform}/>
+      { !mobile && (<Window 
         title='rave_poster.jpg' 
         icon={imageIcon} 
         height='auto' 
@@ -23,7 +32,8 @@ const Desktop = () => {
           <a href="https://first-avenue.com/event/2023-02-seeking-aravements/" target="_blank" rel="noreferrer noopener">
             <img className='poster' alt="poster for the seeking aravements show" src={poster}/>
           </a>}/>
-      <Window 
+      )}
+      { !mobile && (<Window 
         title='giveaway.jpg' 
         icon={imageIcon} 
         height='auto' 
@@ -34,6 +44,7 @@ const Desktop = () => {
           <a href="https://first-avenue.com/event/2023-02-seeking-aravements/" target="_blank" rel="noreferrer noopener">
             <img className='poster' alt="flyer for the seeking aravements giveaway" src={giveaway}/>
           </a>}/>
+      )}
       <Taskbar/>
     </div>
   )

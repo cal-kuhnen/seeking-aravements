@@ -71,14 +71,10 @@ const Questions = () => {
               placeholder="ex. 5'8&quot;"
               {...register(question.id, {
                 required: true,
-                pattern: /^[3-7]'(?:\s*(?:1[01]|[0-9])(''|"))?$/,
               })}
             />
             {errors[question.id] && errors[question.id]?.type === "required" && (
               <p className="errorMsg">This is required.</p>
-            )}
-            {errors[question.id] && errors[question.id]?.type === "pattern" && (
-              <p className="errorMsg">Height is not valid.</p>
             )}
           </div>
         )

@@ -108,7 +108,8 @@ export const form = {
 	      'Cannabis',
         'Hallucinogens (LSD, Psilocybin mushrooms)',
 	      'MDMA',
-	      'Cocaine'
+	      'Cocaine',
+        'None'
       ]
     },
     {

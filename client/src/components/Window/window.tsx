@@ -16,18 +16,26 @@ const Window = (props: WindowInfo) => {
   const [ref, pressed] = useDraggable({
     onDrag: handleDrag
     },
-    { x: props.x, y: props.y });
+    { x: window.innerWidth * (props.x / 100), y: window.innerHeight * (props.y / 100) });
 
   const initialSize = {
     height: props.height,
     width: props.width,
-    transform: `translate(${props.x}px, ${props.y}px)`,
+    transform: `translate(${props.x}vw, ${props.y}vh)`,
+  }
+
+  const handleClick = (e: any) => {
+    const elements = document.getElementsByClassName('window') as HTMLCollectionOf<HTMLElement>;
+    for(let i = 0; i < elements.length; i++) {
+      elements[i].style.zIndex = '1';
+      e.currentTarget.style.zIndex = '2';
+    }
   }
 
   const content = props.content();
 
   return (
-    <div key={props.title} className='window' style={initialSize} ref={ref as any}>
+    <div key={props.title} className='window' style={initialSize} ref={ref as any} onMouseDown={handleClick}>
       <Titlebar title={props.title} icon={props.icon}/>
       <div className='window-content'>
         {content}

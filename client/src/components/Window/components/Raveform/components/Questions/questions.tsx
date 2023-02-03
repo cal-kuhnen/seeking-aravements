@@ -17,7 +17,6 @@ const Questions = () => {
   const onSubmit = (data: any) => {
     setFormData(JSON.stringify(data));
     let cleanedData = {...data, substances: data.substances.toString()};
-    console.log(cleanedData);
     postMatchData(cleanedData);
   };
 

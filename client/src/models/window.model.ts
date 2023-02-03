@@ -8,8 +8,8 @@ export interface Position {
 export interface WindowInfo {
   title: string;
   icon: string;
-  height: number;
-  width: number;
+  height: string;
+  width: string;
   x: number;
   y: number;
   content: () => ReactElement;

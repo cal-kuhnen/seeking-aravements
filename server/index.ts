@@ -2,7 +2,6 @@ import { NextFunction, Request, Response } from "express";
 import * as handler from "./spreadsheet";
 const path = require('path');
 const express = require("express");
-const forceSSL = require('express-force-ssl');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3001;
 

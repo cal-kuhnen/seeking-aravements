@@ -12,8 +12,28 @@ const Desktop = () => {
   return (
     <div className="desktop">
       <Window title='Seeking Aravements' icon={notepad} height='90vh' width='53vw' x={1} y={3} content={Raveform}/>
-      <Window title='rave_poster.jpg' icon={imageIcon} height='auto' width='30vw' x={55} y={6} content={() => <img className='poster' src={poster}></img>}/>
-      <Window title='giveaway.jpg' icon={imageIcon} height='auto' width='30vw' x={65} y={12} content={() => <img className='poster' src={giveaway}></img>}/>
+      <Window 
+        title='rave_poster.jpg' 
+        icon={imageIcon} 
+        height='auto' 
+        width='30vw' 
+        x={55} 
+        y={6} 
+        content={() => 
+          <a href="https://first-avenue.com/event/2023-02-seeking-aravements/" target="_blank" rel="noreferrer noopener">
+            <img className='poster' alt="poster for the seeking aravements show" src={poster}/>
+          </a>}/>
+      <Window 
+        title='giveaway.jpg' 
+        icon={imageIcon} 
+        height='auto' 
+        width='30vw' 
+        x={65} 
+        y={12} 
+        content={() => 
+          <a href="https://first-avenue.com/event/2023-02-seeking-aravements/" target="_blank" rel="noreferrer noopener">
+            <img className='poster' alt="flyer for the seeking aravements giveaway" src={giveaway}/>
+          </a>}/>
       <Taskbar/>
     </div>
   )

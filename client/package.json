@@ -41,8 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "google-spreadsheet": "^3.3.0"
-  },
   "proxy": "http://localhost:3001"
 }

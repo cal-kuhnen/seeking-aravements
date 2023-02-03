@@ -22,7 +22,7 @@ const Questions = () => {
 
   const onSubmit = async (data: any) => {
     setFormData(JSON.stringify(data));
-    let cleanedData = {...data, substances: data.substances.toString()};
+    let cleanedData = {...data, substances: data.substances.toString(), genderPref: data.genderPref.toString()};
     const res = await postMatchData(cleanedData);
     if (res && res.status === 200) {
       setSuccessMessage(true);

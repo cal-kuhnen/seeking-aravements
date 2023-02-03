@@ -45,6 +45,17 @@ export const form = {
       ]
     },
     {
+      id: 'genderPref',
+      type: 'checkbox',
+      label: 'Who do you find yourself romantically interested in? Select all that apply:',
+      values: [
+        'Men',
+        'Women',
+        'Gender non-conforming/non-binary',
+        'Other'
+      ]
+    },
+    {
       id: 'romance',
       type: 'radio',
       label: 'What are you looking to get out of this?',

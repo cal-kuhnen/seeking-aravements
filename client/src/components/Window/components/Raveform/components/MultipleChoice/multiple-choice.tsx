@@ -15,9 +15,22 @@ const MultipleChoice = (question: MultipleChoiceModel) => {
   }
 
   const Values = question.info.values?.map(value => {
-    if (value === common.other) {
+    if (question.info.type === 'checkbox') {
       return (
-        <label id="moronic" key={question.info.id} className='multiple-choice'>
+        <label key={question.info.id + value} className='multiple-choice'>
+          <input
+            type="checkbox"
+            value={value}
+            {...question.register(question.info.id, {
+                required: true,
+            })}
+          />
+          {value}
+        </label>
+      );
+    } else if (value === common.other) {
+      return (
+        <label id="moronic" key={question.info.id + value} className='multiple-choice'>
           <input
             type="radio"
             value={radioText}

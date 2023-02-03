@@ -12,17 +12,22 @@ const Questions = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({mode: "onChange"});
-  const [data, setData] = useState('');
+  const [formData, setFormData] = useState({} as any);
 
   const onSubmit = (data: any) => {
-    setData(JSON.stringify(data));
-    console.log(data);
-    postMatchData(data);
+    setFormData(JSON.stringify(data));
+    let cleanedData = {...data, substances: data.substances.toString()};
+    console.log(cleanedData);
+    postMatchData(cleanedData);
   };
 
   const generatedQuestions: any = form.questions.map(question => {
     switch (question.type) {
       case 'radio':
+        return (
+          <MultipleChoice info={question as Question} register={register} errors={errors}/>
+        )
+      case 'checkbox':
         return (
           <MultipleChoice info={question as Question} register={register} errors={errors}/>
         )
@@ -124,7 +129,7 @@ const Questions = () => {
     <div className="questions">
       <form onSubmit={handleSubmit(onSubmit)}>
         {generatedQuestions}
-        <div className="form-control">
+        <div key="boom" className="form-control">
           <label></label>
           <button type="submit">Submit</button>
         </div>

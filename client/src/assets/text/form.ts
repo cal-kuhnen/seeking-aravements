@@ -100,7 +100,7 @@ export const form = {
     },
     {
       id: 'substances',
-      type: 'radio',
+      type: 'checkbox',
       label: 'Place a check next to each substance you are comfortable with your potential match using.',
       values: [
         'Nicotine',
@@ -147,22 +147,17 @@ export const form = {
       ]
     },
     {
-      id: 'spirit',
-      type: 'text-area',
-      label: 'Are you religious or spiritual? If so, what role does it play in your life? (ie: do you go to church, how often, etc)',
-    },
-    {
-      id: 'favorite-music',
+      id: 'favoriteMusic',
       type: 'text-area',
       label: 'What are five of your favorite albums and/or five of your favorite musicians?',
     },
     {
-      id: 'time-travel',
+      id: 'timeTravel',
       type: 'text-area',
       label: 'If you could go back in time to attend any concert or music festival, which would you choose?',
     },
     {
-      id: 'favorite-movies',
+      id: 'favoriteMovies',
       type: 'text-area',
       label: 'What are five of your favorite tv shows and/or five of your favorite movies?',
     },
@@ -182,7 +177,7 @@ export const form = {
       label: 'Who is a cartoon character you feel best describes you?',
     },
     {
-      id: 'free-time',
+      id: 'freeTime',
       type: 'text-area',
       label: 'What do you typically do in your free time?',
     },
@@ -254,7 +249,7 @@ export const form = {
       label: 'Please list the most important traits/qualities you look for in a romantic partner.',
     },
     {
-      id: 'first-date',
+      id: 'firstDate',
       type: 'text-area',
       label: 'Where would you take your match on a first date?',
     },
@@ -301,6 +296,14 @@ export const form = {
       id: 'contact',
       type: 'text-area',
       label: 'How would you like to be contacted by your match? Please provide a method(s) of contact you feel comfortable with (email, phone number, instagram, twitter, etc).',
-    }
+    },
+    {
+      id: 'verification',
+      type: 'checkbox',
+      label: 'I verify that I am at least 18 and understand that DJ LeftFoot & Co. will do their best to match me up with the love of my life / sexiest person ever but ultimately are not responsible nor liable for any communication or interaction that occurs outside of this website, and cannot guarantee a match.',
+      values: [
+        'I agree'
+      ]
+    },
   ]
 }

@@ -1,7 +1,8 @@
+import { NextFunction, Request, Response } from "express";
+import * as handler from "./spreadsheet";
 const path = require('path');
 const express = require("express");
-const bodyParser = require('body-parser')
-
+const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -9,23 +10,24 @@ const app = express();
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-app.use(function(req, res, next) {
+app.use(function(req: Request, res: Response, next: NextFunction) {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   next();
 });
 
 app.use(bodyParser.json());
 
-app.get("/api", (req, res) => {
+app.get("/api", (req: Request, res: Response) => {
   res.json({ message: "Hello from server!" });
 });
 
-app.post("/api/submit", (req, res) => {
+app.post("/api/submit", (req: Request, res: Response) => {
   res.send(req.body);
+  handler.sheetHandler(req.body);
   console.log(req.body);
 })
 
-app.get('*', (req, res) => {
+app.get('*', (req: Request, res: Response) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
